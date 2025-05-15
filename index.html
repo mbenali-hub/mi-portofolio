@@ -13,32 +13,36 @@
   </div>
 
   <script>
-    const username = "mbenali-hub"; // ← reemplaza con tu nombre de usuario
+    const username = "mbenali-hub"; // tu usuario
 
-    fetch(`https://api.github.com/users/${username}/repos`)
-      .then(res => res.json())
-      .then(repos => {
-        const container = document.getElementById("repos-container");
-        container.innerHTML = "";
-        repos.forEach(repo => {
-          const card = document.createElement("div");
-          card.className = "repo-card";
-          card.innerHTML = `
-            <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
-            <p>${repo.description || "Sin descripción"}</p>
-            <div class="repo-meta">
-              <span>🌐 ${repo.language || "N/A"}</span>
-              <span>⭐ ${repo.stargazers_count}</span>
-              <span>🍴 ${repo.forks_count}</span>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(error => {
-        document.getElementById("repos-container").innerHTML = "Error al cargar repositorios.";
-        console.error(error);
-      });
+fetch(`https://api.github.com/users/${username}/repos`)
+  .then(res => res.json())
+  .then(repos => {
+    const container = document.getElementById("repos-container");
+    container.innerHTML = "";
+
+    // Filtramos repos que NO queremos mostrar (por ejemplo 'portfolio')
+    const reposFiltrados = repos.filter(repo => repo.name.toLowerCase() !== "portfolio");
+
+    reposFiltrados.forEach(repo => {
+      const card = document.createElement("div");
+      card.className = "repo-card";
+      card.innerHTML = `
+        <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
+        <p>${repo.description || "Sin descripción"}</p>
+        <div class="repo-meta">
+          <span>🌐 ${repo.language || "N/A"}</span>
+          <span>⭐ ${repo.stargazers_count}</span>
+          <span>🍴 ${repo.forks_count}</span>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    document.getElementById("repos-container").innerHTML = "Error al cargar repositorios.";
+    console.error(error);
+  });
   </script>
 </body>
 </html>
