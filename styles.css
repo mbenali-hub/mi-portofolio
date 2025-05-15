@@ -1,0 +1,67 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e1e; /* fondo oscuro */
+  margin: 0;
+  padding: 0;
+  color: #ddd; /* texto claro */
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #bb86fc; /* color púrpura suave */
+}
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.repo-card {
+  position: relative;
+  background-color: #2c2c2c; /* fondo oscuro para las tarjetas */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(187, 134, 252, 0.6);
+}
+
+.repo-card h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #bb86fc;
+}
+
+.repo-card a {
+  text-decoration: none;
+  color: #bb86fc;
+}
+
+.repo-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.repo-meta {
+  position: absolute;
+  bottom: 9px;
+  font-size: 0.79rem;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  gap: 20px;
+}

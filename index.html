@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio GitHub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📁 Mis Repositorios</h1>
+    <div id="repos-container" class="repos-grid">Cargando repos...</div>
+  </div>
+
+  <script>
+    const username = "mbenali-hub"; // ← reemplaza con tu nombre de usuario
+
+    fetch(`https://api.github.com/users/${username}/repos`)
+      .then(res => res.json())
+      .then(repos => {
+        const container = document.getElementById("repos-container");
+        container.innerHTML = "";
+        repos.forEach(repo => {
+          const card = document.createElement("div");
+          card.className = "repo-card";
+          card.innerHTML = `
+            <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
+            <p>${repo.description || "Sin descripción"}</p>
+            <div class="repo-meta">
+              <span>🌐 ${repo.language || "N/A"}</span>
+              <span>⭐ ${repo.stargazers_count}</span>
+              <span>🍴 ${repo.forks_count}</span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById("repos-container").innerHTML = "Error al cargar repositorios.";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
