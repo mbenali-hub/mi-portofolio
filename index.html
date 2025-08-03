@@ -3,46 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portafolio GitHub</title>
+  <title>Mohab Benali - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>📁 Mis Repositorios</h1>
-    <div id="repos-container" class="repos-grid">Cargando repos...</div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">MB</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Inicio</a></li>
+        <li><a href="#about" class="nav-link">Sobre mí</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Hola, soy <span class="highlight">Mohamed Benali</span>
+        </h1>
+        <p class="hero-subtitle">Desarrollador de Software</p>
+        <p class="hero-description">
+          Creo soluciones digitales innovadoras con tecnologías modernas y mejores prácticas de desarrollo.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+          <a href="#contact" class="btn btn-secondary">Contactar</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="code-animation">
+          <div class="code-line"><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {</div>
+          <div class="code-line indent">name: <span class="code-string">'Mohamed Benali'</span>,</div>
+          <div class="code-line indent">skills: [<span class="code-string">'Java'</span>, <span class="code-string">'SQL'</span>, <span class="code-string">'Spring Boot'</span>],</div>
+          <div class="code-line indent">passion: <span class="code-string">'Building amazing products'</span></div>
+          <div class="code-line">};</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">Sobre Mí</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Soy un desarrollador apasionado por crear experiencias digitales excepcionales. 
+            Con experiencia en desarrollo de aplicaciones de escritorio y web enfocado en backend, me especializo en construir aplicaciones 
+            web escalables y mantenibles utilizando las últimas tecnologías.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <div class="skill-tags">
+                <span class="skill-tag" data-skill="CSS" data-level="Intermedio" data-description="Maquetación y estilos web">CSS</span>
+                <span class="skill-tag" data-skill="HTML" data-level="Avanzado" data-description="Estructura y semántica web">HTML</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Backend</h3>
+              <div class="skill-tags">
+                <span class="skill-tag" data-skill="Java" data-level="Avanzado" data-description="Desarrollo de aplicaciones empresariales">Java</span>
+                <span class="skill-tag" data-skill="SQL" data-level="Intermedio" data-description="Consultas y gestión de bases de datos">SQL</span>
+                <span class="skill-tag" data-skill="Spring Boot" data-level="Intermedio" data-description="Framework para aplicaciones Java">Spring Boot</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Herramientas</h3>
+              <div class="skill-tags">
+                <span class="skill-tag" data-skill="Git" data-level="Intermedio" data-description="Control de versiones">Git</span>
+                <span class="skill-tag" data-skill="Docker" data-level="Básico" data-description="Contenedores y virtualización">Docker</span>
+                <span class="skill-tag" data-skill="AWS" data-level="Básico" data-description="Servicios en la nube">AWS</span>
+                <span class="skill-tag" data-skill="PostgreSQL" data-level="Intermedio" data-description="Base de datos relacional">PostgreSQL</span>
+                <span class="skill-tag" data-skill="MySQL" data-level="Intermedio" data-description="Sistema de gestión de bases de datos">MySQL</span>
+                <span class="skill-tag" data-skill="Postman" data-level="Intermedio" data-description="Testing de APIs">Postman</span>
+                <span class="skill-tag" data-skill="Cursor" data-level="Avanzado" data-description="Editor de código con IA">Cursor</span>
+                <span class="skill-tag" data-skill="JPA/Hibernate" data-level="Intermedio" data-description="Persistencia de datos">JPA/Hibernate</span>
+                <span class="skill-tag" data-skill="IDEs con IA" data-level="Avanzado" data-description="Entornos de desarrollo inteligentes">IDEs con IA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Mis Proyectos</h2>
+      <div id="repos-container" class="projects-grid">
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Cargando proyectos...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <p>mohabenali35@example.com</p>
+            </div>
+            <a href="mailto:mohabenali35@gmail.com" class="contact-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <h3>GitHub</h3>
+              <p>github.com/mbenali-hub</p>
+            </div>
+            <a href="https://github.com/mbenali-hub" target="_blank" rel="noopener" class="contact-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/mohamed-benali</p>
+            </div>
+            <a href="https://www.linkedin.com/in/mohamed-ben-ali-84516b202/" target="_blank" rel="noopener" class="contact-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skill Tooltip -->
+  <div id="skill-tooltip" class="skill-tooltip">
+    <div class="tooltip-header">
+      <h4 id="tooltip-skill"></h4>
+      <span id="tooltip-level" class="tooltip-level"></span>
+    </div>
+    <p id="tooltip-description"></p>
   </div>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Mohamed Benali. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
   <script>
-    const username = "mbenali-hub"; // tu usuario
+    const username = "mbenali-hub";
 
-fetch(`https://api.github.com/users/${username}/repos`)
-  .then(res => res.json())
-  .then(repos => {
-    const container = document.getElementById("repos-container");
-    container.innerHTML = "";
-
-    // Filtramos repos que NO queremos mostrar (por ejemplo 'portfolio')
-    const reposFiltrados = repos.filter(repo => repo.name.toLowerCase() !== "mi-portofolio");
-
-    reposFiltrados.forEach(repo => {
-      const card = document.createElement("div");
-      card.className = "repo-card";
-      card.innerHTML = `
-        <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
-        <p>${repo.description || "Sin descripción"}</p>
-        <div class="repo-meta">
-          <span>🌐 ${repo.language || "N/A"}</span>
-          <span>⭐ ${repo.stargazers_count}</span>
-          <span>🍴 ${repo.forks_count}</span>
-        </div>
-      `;
-      container.appendChild(card);
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
-  })
-  .catch(error => {
-    document.getElementById("repos-container").innerHTML = "Error al cargar repositorios.";
-    console.error(error);
-  });
+
+    // Fetch and display GitHub repositories
+    fetch(`https://api.github.com/users/${username}/repos`)
+      .then(res => res.json())
+      .then(repos => {
+        const container = document.getElementById("repos-container");
+        container.innerHTML = "";
+
+        // Filter repositories we don't want to show
+        const filteredRepos = repos.filter(repo => 
+          repo.name.toLowerCase() !== "mi-portofolio" && 
+          repo.name.toLowerCase() !== "portfolio"
+        );
+
+        filteredRepos.forEach(repo => {
+          const card = document.createElement("div");
+          card.className = "project-card";
+          card.innerHTML = `
+            <div class="project-header">
+              <h3 class="project-title">
+                <a href="${repo.html_url}" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  ${repo.name}
+                </a>
+              </h3>
+              <div class="project-links">
+                <a href="${repo.html_url}" target="_blank" rel="noopener" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>` : ''}
+              </div>
+            </div>
+            <p class="project-description">${repo.description || "Sin descripción disponible"}</p>
+            <div class="project-meta">
+              <span class="project-language">
+                <i class="fas fa-code"></i>
+                ${repo.language || "N/A"}
+              </span>
+              <span class="project-stars">
+                <i class="fas fa-star"></i>
+                ${repo.stargazers_count}
+              </span>
+              <span class="project-forks">
+                <i class="fas fa-code-branch"></i>
+                ${repo.forks_count}
+              </span>
+            </div>
+            <div class="project-footer">
+              <span class="project-date">
+                <i class="fas fa-calendar"></i>
+                ${new Date(repo.updated_at).toLocaleDateString('es-ES')}
+              </span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById("repos-container").innerHTML = `
+          <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Error al cargar los proyectos. Por favor, inténtalo de nuevo más tarde.</p>
+          </div>
+        `;
+        console.error(error);
+      });
+
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Skill Tooltip System
+    const tooltip = document.getElementById('skill-tooltip');
+    const skillTags = document.querySelectorAll('.skill-tag[data-skill]');
+    let tooltipTimeout;
+
+    skillTags.forEach(tag => {
+      tag.addEventListener('mouseenter', (e) => {
+        const skill = e.target.getAttribute('data-skill');
+        const level = e.target.getAttribute('data-level');
+        const description = e.target.getAttribute('data-description');
+        
+        // Update tooltip content
+        document.getElementById('tooltip-skill').textContent = skill;
+        document.getElementById('tooltip-level').textContent = level;
+        document.getElementById('tooltip-description').textContent = description;
+        
+        // Position tooltip
+        const rect = e.target.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+        
+        let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+        let top = rect.top - tooltipRect.height - 15;
+        
+        // Adjust if tooltip goes off screen
+        if (left < 10) left = 10;
+        if (left + tooltipRect.width > window.innerWidth - 10) {
+          left = window.innerWidth - tooltipRect.width - 10;
+        }
+        if (top < 10) {
+          top = rect.bottom + 15;
+        }
+        
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+        
+        // Show tooltip with delay
+        clearTimeout(tooltipTimeout);
+        tooltipTimeout = setTimeout(() => {
+          tooltip.classList.add('show');
+        }, 300);
+      });
+      
+      tag.addEventListener('mouseleave', () => {
+        clearTimeout(tooltipTimeout);
+        tooltip.classList.remove('show');
+      });
+    });
+
+    // Hide tooltip when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.skill-tag')) {
+        tooltip.classList.remove('show');
+      }
+    });
   </script>
 </body>
 </html>
